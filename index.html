@@ -39,12 +39,22 @@ body {
   background-color: #7d1515;
 }
 
-/* Maintenance Text */
+/* Maintenance Section */
 #maintenance {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#maintenance h1 {
   font-size: 32px;
-  font-weight: bold;
   color: #a11c1c;
+}
+
+#maintenance img {
+  max-width: 300px;
+  width: 80%;
 }
 </style>
 </head>
@@ -56,7 +66,8 @@ body {
 </div>
 
 <div id="maintenance">
-  UNDER MAINTENANCE EXCITED KA NAMAN
+  <h1>UNDER MAINTENANCE EXCITED KA NAMAN</h1>
+  <img src="gorilla.jpg" alt="Maintenance Image">
 </div>
 
 <audio id="bgMusic" loop>
@@ -70,9 +81,9 @@ const maintenance = document.getElementById("maintenance");
 const music = document.getElementById("bgMusic");
 
 startBtn.addEventListener("click", () => {
-  music.play(); // start music
-  startScreen.style.display = "none"; // hide button
-  maintenance.style.display = "block"; // show maintenance text
+  music.play();
+  startScreen.style.display = "none";
+  maintenance.style.display = "flex";
 });
 </script>
 
