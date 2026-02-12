@@ -14,29 +14,67 @@ body {
   align-items: center;
   background-color: #FFFACD;
   font-family: Arial, sans-serif;
-  color: #a11c1c;
-  font-size: 32px;
-  font-weight: bold;
   text-align: center;
 }
 
-#gameContainer, #hud, #controls, #game {
-  display: none; /* hide everything else */
+/* Start Screen */
+#startScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#startBtn {
+  padding: 12px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #a11c1c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#startBtn:hover {
+  background-color: #7d1515;
+}
+
+/* Maintenance Text */
+#maintenance {
+  display: none;
+  font-size: 32px;
+  font-weight: bold;
+  color: #a11c1c;
 }
 </style>
 </head>
 
 <body>
-  UNDER MAINTENANCE EXCITED KA NAMAN
 
-  <!-- Automatic background music -->
- <audio autoplay loop>
-  <source src="background.mp3" type="audio/mp3">
-  <source src="background.ogg" type="audio/ogg">
-  <source src="background.wav" type="audio/wav">
-  Your browser does not support the audio element.
+<div id="startScreen">
+  <button id="startBtn">START</button>
+</div>
+
+<div id="maintenance">
+  UNDER MAINTENANCE EXCITED KA NAMAN
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="background.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("startScreen");
+const maintenance = document.getElementById("maintenance");
+const music = document.getElementById("bgMusic");
+
+startBtn.addEventListener("click", () => {
+  music.play(); // start music
+  startScreen.style.display = "none"; // hide button
+  maintenance.style.display = "block"; // show maintenance text
+});
+</script>
 
 </body>
 </html>
