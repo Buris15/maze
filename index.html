@@ -9,6 +9,11 @@
 
 <body>
 
+  <div id="startScreen">
+  <button id="startBtn">START GAME</button>
+</div>
+  <div id="mainGame" style="display:none;"></div>
+
 <div id="hud">
   🟡 <span id="keyY">0</span>
   🔴 <span id="keyR">0</span>
@@ -40,6 +45,8 @@
 <audio id="hitSound" src="hit.mp3"></audio>
 <audio id="winSound" src="win.mp3"></audio>
 
+<audio id="bgMusic" src="bgmusic.mp3" loop></audio>
+
 <script>
 const rows = 20;
 const cols = 25;
@@ -51,6 +58,19 @@ const banner=document.getElementById("messageBanner");
 let keys={yellow:0,red:0,blue:0};
 let gameWon=false;
 let flowersCollected=0;
+
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("startScreen");
+const mainGame = document.getElementById("mainGame");
+const bgMusic = document.getElementById("bgMusic");
+
+bgMusic.volume = 0.5;
+
+startBtn.addEventListener("click", () => {
+  startScreen.style.display = "none";
+  mainGame.style.display = "block";
+  bgMusic.play();
+});
 
 /* CONFIGURABLE BOOK MESSAGES */
 const bookMessages={
