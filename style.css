@@ -11,6 +11,39 @@ body{
   height:100vh;
 }
 
+#startScreen{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#ffe6f0,#ffc0cb);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#startBtn{
+  padding:18px 50px;
+  font-size:22px;
+  font-weight:bold;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  background:linear-gradient(45deg,#ff69b4,#ff1493);
+  color:white;
+  box-shadow:0 8px 20px rgba(255,20,147,0.4);
+  transition:all 0.3s ease;
+  letter-spacing:2px;
+}
+
+#startBtn:hover{
+  transform:scale(1.08);
+  box-shadow:0 12px 30px rgba(255,20,147,0.6);
+}
+
+#startBtn:active{
+  transform:scale(0.96);
+}
+
 #hud{
   display:flex;
   gap:16px;
